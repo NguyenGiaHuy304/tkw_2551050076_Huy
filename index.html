@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Trang Chủ - Nền Tảng Phim Trực Tuyến</title>
+</head>
+<body>
+    <!-- Accessibility: Link bỏ qua đến nội dung chính -->
+    <a href="#main-content">Bỏ qua đến nội dung chính</a>
+
+    <!-- 1. Navbar -->
+    <header aria-labelledby="header-heading">
+        <h2 id="header-heading" style="clip: rect(0 0 0 0); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;">Menu điều hướng</h2>
+        <a href="/">
+            <img src="logo.svg" alt="Trang chủ Nền tảng Phim">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#features">Tính năng</a></li>
+                <li><a href="#pricing">Bảng giá</a></li>
+                <li><a href="#faq">Hỏi đáp</a></li>
+            </ul>
+        </nav>
+        <!-- Đi đâu đó thì dùng <a>, Làm gì đó thì dùng <button> -->
+        <button type="button">Đăng nhập</button>
+    </header>
+
+    <main id="main-content">
+        <!-- 2. Hero Section -->
+        <section aria-labelledby="hero-heading">
+            <!-- Quy tắc 1: Mỗi trang đúng MỘT thẻ h1 -->
+            <h1 id="hero-heading">Trải Nghiệm Điện Ảnh Đỉnh Cao Tại Nhà</h1>
+            <p>Khám phá hàng ngàn bộ phim bom tấn và series độc quyền với chất lượng 4K HDR.</p>
+            <button type="button">Bắt đầu xem miễn phí 7 ngày</button>
+        </section>
+
+        <!-- 3. Logo Khách hàng / Đối tác -->
+        <section aria-labelledby="partners-heading">
+            <!-- Quy tắc 2: Mỗi <section> có heading, nối bằng aria-labelledby -->
+            <h2 id="partners-heading">Các đối tác cung cấp nội dung</h2>
+            <!-- Quy tắc 3: Danh sách thẻ phải là <ul> -->
+            <ul>
+                <li><img src="warnerbros.png" alt="Hãng phim Warner Bros"></li>
+                <li><img src="universal.png" alt="Hãng phim Universal"></li>
+                <li><img src="paramount.png" alt="Hãng phim Paramount"></li>
+            </ul>
+        </section>
+
+        <!-- 4. Tính năng -->
+        <section id="features" aria-labelledby="features-heading">
+            <h2 id="features-heading">Tính năng nổi bật của nền tảng</h2>
+            <ul>
+                <li>
+                    <h3>Độ phân giải 4K HDR</h3>
+                    <p>Tận hưởng hình ảnh sắc nét, màu sắc chân thực trên mọi thiết bị hỗ trợ.</p>
+                </li>
+                <li>
+                    <h3>Âm thanh vòm Dolby Atmos</h3>
+                    <p>Trải nghiệm âm thanh sống động như đang ngồi trực tiếp tại rạp chiếu phim.</p>
+                </li>
+                <li>
+                    <h3>Xem ngoại tuyến mọi lúc</h3>
+                    <p>Tải xuống nội dung yêu thích để xem khi không có kết nối mạng.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 5. Số liệu -->
+        <section aria-labelledby="stats-heading">
+            <h2 id="stats-heading">Nền tảng của chúng tôi qua những con số</h2>
+            <ul>
+                <li>
+                    <strong>10,000+</strong>
+                    <p>Bộ phim và Series độc quyền</p>
+                </li>
+                <li>
+                    <strong>5 Triệu</strong>
+                    <p>Tài khoản đang hoạt động</p>
+                </li>
+                <li>
+                    <strong>99.9%</strong>
+                    <p>Thời gian xem không gián đoạn</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 6. Cảm nhận (Testimonials) -->
+        <section aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading">Người dùng nói gì về chúng tôi</h2>
+            <ul>
+                <li>
+                    <blockquote>"Chất lượng phim tuyệt vời, tốc độ tải rất nhanh không bao giờ bị giật lag vào giờ cao điểm."</blockquote>
+                    <p>- Nguyễn Văn A, Người dùng gói Cao cấp</p>
+                </li>
+                <li>
+                    <blockquote>"Kho phim tài liệu đa dạng và phong phú là điều tôi thích nhất ở nền tảng này."</blockquote>
+                    <p>- Trần Thị B, Người dùng gói Cơ bản</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 7. Bảng giá -->
+        <section id="pricing" aria-labelledby="pricing-heading">
+            <h2 id="pricing-heading">Chọn gói dịch vụ phù hợp với bạn</h2>
+            <ul>
+                <li>
+                    <h3>Gói Cơ bản</h3>
+                    <p>100.000 VNĐ / Tháng</p>
+                    <ul>
+                        <li>Xem trên 1 thiết bị</li>
+                        <li>Độ phân giải HD 720p</li>
+                    </ul>
+                    <button type="button">Đăng ký gói Cơ bản</button>
+                </li>
+                <li>
+                    <h3>Gói Cao cấp</h3>
+                    <p>250.000 VNĐ / Tháng</p>
+                    <ul>
+                        <li>Xem cùng lúc 4 thiết bị</li>
+                        <li>Độ phân giải 4K + HDR</li>
+                    </ul>
+                    <button type="button">Đăng ký gói Cao cấp</button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 8. Câu hỏi thường gặp (FAQ) -->
+        <section id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Câu hỏi thường gặp</h2>
+            <ul>
+                <li>
+                    <details>
+                        <summary>Tôi có thể hủy gói đăng ký bất cứ lúc nào không?</summary>
+                        <p>Có, bạn hoàn toàn có thể hủy gia hạn tự động bất cứ lúc nào trong phần cài đặt quản lý tài khoản.</p>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Nền tảng hỗ trợ xem trên những thiết bị nào?</summary>
+                        <p>Chúng tôi hỗ trợ Smart TV, điện thoại thông minh, máy tính bảng và mọi trình duyệt web trên máy tính cá nhân.</p>
+                    </details>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 9. CTA (Call to Action) -->
+        <section aria-labelledby="cta-heading">
+            <h2 id="cta-heading">Sẵn sàng chìm đắm trong thế giới điện ảnh?</h2>
+            <p>Tạo tài khoản ngay hôm nay để nhận ưu đãi đặc biệt tháng này dành riêng cho thành viên mới.</p>
+            <button type="button">Tạo tài khoản miễn phí</button>
+        </section>
+    </main>
+
+    <!-- 10. Footer -->
+    <footer aria-labelledby="footer-heading">
+        <h2 id="footer-heading">Thông tin liên hệ và chính sách</h2>
+        <ul>
+            <li><a href="/about">Về chúng tôi</a></li>
+            <li><a href="/privacy">Chính sách bảo mật</a></li>
+            <li><a href="/terms">Điều khoản sử dụng</a></li>
+            <li><a href="/contact">Liên hệ hỗ trợ</a></li>
+        </ul>
+        <p>&copy; 2026 Nền Tảng Phim Trực Tuyến. Bảo lưu mọi quyền.</p>
+    </footer>
+</body>
+</html>

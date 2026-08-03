@@ -10,18 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Huysee/tkw_2551050072_Huy.git"
+    "url": "git+https://github.com/Huy/tkw_2551050076_Huy.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Huysee/tkw_2551050072_Huy/issues"
+    "url": "https://github.com/Huy/tkw_2551050076_Huy/issues"
   },
-  "homepage": "https://github.com/Huysee/tkw_2551050072_Huy#readme",
+  "homepage": "https://github.com/Huy/tkw_2551050076_Huy#readme",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.25",
     "tailwindcss": "^4.3.3"
   }
 }

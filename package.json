@@ -1,7 +1,7 @@
 {
   "name": "tkw_2551050076_Huy",
   "version": "1.0.0",
-  "description": "chủ đề: phần mềm coi phim trực tuyến",
+  "description": "chủ đề:  Website giới thiệu phần mềm train trực tuyến" ,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270">
+  <rect width="480" height="270" fill="#120A0A" />
+  <rect width="480" height="270" fill="#E4002B" opacity="0.12" />
+  <rect x="150" y="90" width="180" height="120" rx="10" fill="none" stroke="#FFC700" stroke-width="6"/><polygon points="220,120 220,180 270,150" fill="#FFC700"/>
+  <text x="240" y="245" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#F5EDE9" text-anchor="middle">Xem phim trực tuyến</text>
+</svg>

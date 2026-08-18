@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liên hệ — Th4nhH1</title>
+<meta name="description" content="Liên hệ với Nguyễn Gia Huy (Th4nhH1) qua email, GitHub hoặc form bên dưới." />
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="./dist/output.css" />
+<script>
+  (function () {
+    var saved = localStorage.getItem("theme");
+    var dark = saved ? saved === "dark" : true;
+    document.documentElement.classList.toggle("dark", dark);
+  })();
+</script>
+</head>
+<body>
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-pill focus:bg-brand-600 focus:px-4 focus:py-2 focus:text-white">Bỏ qua đến nội dung chính</a>
+<div id="nav-sentinel"></div>
+
+<header id="site-header" class="sticky top-0 z-40 border-b border-transparent bg-surface/90 backdrop-blur transition-shadow dark:bg-surface-dark/90">
+  <nav aria-label="Điều hướng chính" class="section flex items-center justify-between !py-4">
+    <a href="./index.html" class="flex items-center gap-2 font-display text-lg font-extrabold">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-brand-600 text-white">TH</span>
+      <span>Th4nhH1</span>
+    </a>
+    <ul id="nav-links" class="hidden items-center gap-8 lg:flex">
+      <li><a class="nav-link" href="./index.html">Trang chủ</a></li>
+      <li><a class="nav-link" href="./projects.html">Dự án</a></li>
+      <li><a class="nav-link" href="./contact.html" aria-current="page">Liên hệ</a></li>
+    </ul>
+    <div class="flex items-center gap-2">
+      <button id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Bật chế độ sáng"
+        class="relative inline-flex h-9 w-16 items-center rounded-pill border border-line bg-surface-alt px-1 transition-colors aria-checked:bg-brand-600 dark:border-line-invert dark:bg-surface-alt-dark">
+        <span class="pointer-events-none inline-block h-7 w-7 translate-x-0 rounded-pill bg-accent-500 text-center text-sm leading-7 shadow transition-transform aria-checked:translate-x-7" aria-hidden="true">🌙</span>
+      </button>
+      <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu"
+        class="grid h-9 w-9 place-items-center rounded-lg border border-line lg:hidden dark:border-line-invert">
+        <svg id="nav-toggle-icon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden border-t border-line px-5 pb-6 lg:hidden dark:border-line-invert">
+    <ul class="flex flex-col gap-1 pt-4">
+      <li><a class="block rounded-lg px-3 py-2.5 nav-link" href="./index.html">Trang chủ</a></li>
+      <li><a class="block rounded-lg px-3 py-2.5 nav-link" href="./projects.html">Dự án</a></li>
+      <li><a class="block rounded-lg px-3 py-2.5 nav-link" href="./contact.html" aria-current="page">Liên hệ</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16" aria-labelledby="contact-title">
+    <div>
+      <span class="eyebrow">Liên hệ</span>
+      <h1 id="contact-title" class="mt-3 font-display text-4xl font-extrabold sm:text-5xl">Nhắn cho mình</h1>
+      <p class="mt-4 max-w-md text-muted dark:text-muted-invert">Có việc muốn hợp tác, một lỗi bạn thấy trên trang, hay chỉ đơn giản muốn chào — điền form hoặc liên hệ trực tiếp bên dưới.</p>
+
+      <ul class="mt-8 space-y-4">
+        <li class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-accent-500">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4z" /><path d="M4 6l8 7 8-7" /></svg>
+          </span>
+          <!-- TODO: thay bằng email thật -->
+          <a class="font-medium hover:text-brand-600 dark:hover:text-accent-500" href="mailto:email@vi-du.com">email@vi-du.com</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center rounded-lg bg-brand-50 text-brand-600 dark:bg-brand-600/15 dark:text-accent-500">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 00-1-2.6c3 0 6-2 6-5.5.1-1.3-.4-2.6-1.3-3.6.4-1.2.4-2.5 0-3.7 0 0-1 0-3 1.3a12.3 12.3 0 00-6 0C8 1.7 7 1.7 7 1.7c-.4 1.2-.4 2.5 0 3.7A5.4 5.4 0 005.7 9c0 3.5 3 5.5 6 5.5-.4.4-.7 1-.9 1.6-.2.6-.2 1.3 0 2V22" /></svg>
+          </span>
+          <!-- TODO: thay bằng link GitHub thật -->
+          <a class="font-medium hover:text-brand-600 dark:hover:text-accent-500" href="https://github.com/">github.com/th4nhh1</a>
+        </li>
+      </ul>
+
+      <!-- FAQ -->
+      <div id="faq" class="mt-12">
+        <h2 class="font-display text-xl font-bold">Câu hỏi thường gặp</h2>
+        <div class="mt-4 divide-y divide-line dark:divide-line-invert">
+
+          <div class="py-3">
+            <h3>
+              <button type="button" class="flex w-full items-center justify-between gap-4 text-left font-medium" data-faq-trigger aria-expanded="false" aria-controls="faq-a1">
+                Bạn có nhận làm dự án nhỏ / freelance không?
+                <svg class="h-4 w-4 shrink-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+            </h3>
+            <div id="faq-a1" class="pt-1" hidden>
+              <p class="pt-2 text-sm text-muted dark:text-muted-invert">Có, mình đang tìm cơ hội thực hành với các dự án nhỏ để học hỏi thêm. Cứ nhắn qua email hoặc GitHub nhé.</p>
+            </div>
+          </div>
+
+          <div class="py-3">
+            <h3>
+              <button type="button" class="flex w-full items-center justify-between gap-4 text-left font-medium" data-faq-trigger aria-expanded="false" aria-controls="faq-a2">
+                Bạn dùng những công nghệ nào để làm trang này?
+                <svg class="h-4 w-4 shrink-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+            </h3>
+            <div id="faq-a2" class="pt-1" hidden>
+              <p class="pt-2 text-sm text-muted dark:text-muted-invert">HTML semantic, Tailwind CSS cho phần giao diện, và JavaScript thuần (không dùng thư viện ngoài) cho các tương tác như menu, dark mode, slider.</p>
+            </div>
+          </div>
+
+          <div class="py-3">
+            <h3>
+              <button type="button" class="flex w-full items-center justify-between gap-4 text-left font-medium" data-faq-trigger aria-expanded="false" aria-controls="faq-a3">
+                Cách nào liên hệ nhanh nhất?
+                <svg class="h-4 w-4 shrink-0 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>
+              </button>
+            </h3>
+            <div id="faq-a3" class="pt-1" hidden>
+              <p class="pt-2 text-sm text-muted dark:text-muted-invert">Email là kênh mình check thường xuyên nhất. Form bên cạnh cũng gửi thẳng thông tin để mình phản hồi sớm nhất có thể.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <form id="contact-form" novalidate>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="sm:col-span-2">
+            <label class="field-label" for="fullname">Họ và tên <span class="text-brand-600 dark:text-accent-500" aria-hidden="true">*</span></label>
+            <input class="field-input" id="fullname" name="fullname" type="text" required autocomplete="name" aria-describedby="fullname-error" />
+            <p class="field-error" id="fullname-error" role="alert"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="email">Email <span class="text-brand-600 dark:text-accent-500" aria-hidden="true">*</span></label>
+            <input class="field-input" id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-error" />
+            <p class="field-error" id="email-error" role="alert"></p>
+          </div>
+
+          <div>
+            <label class="field-label" for="phone">Số điện thoại</label>
+            <input class="field-input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="numeric" pattern="0[0-9]{9}" aria-describedby="phone-hint phone-error" />
+            <p class="mt-1.5 text-xs text-muted dark:text-muted-invert" id="phone-hint">Không bắt buộc.</p>
+            <p class="field-error" id="phone-error" role="alert"></p>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="field-label" for="topic">Chủ đề</label>
+            <select class="field-input" id="topic" name="topic">
+              <option value="hop-tac">Hợp tác dự án</option>
+              <option value="gop-y">Góp ý về trang web</option>
+              <option value="tuyen-dung">Cơ hội thực tập / việc làm</option>
+              <option value="khac">Khác</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="field-label" for="message">Nội dung <span class="text-brand-600 dark:text-accent-500" aria-hidden="true">*</span></label>
+            <textarea class="field-input" id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+            <p class="field-error" id="message-error" role="alert"></p>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="flex items-start gap-2.5 text-sm text-muted dark:text-muted-invert">
+              <input type="checkbox" name="consent" required class="mt-0.5 h-4 w-4 rounded border-line text-brand-600 focus:ring-brand-600 dark:border-line-invert" aria-describedby="consent-error" />
+              Mình đồng ý được liên hệ lại qua email hoặc số điện thoại đã cung cấp.
+            </label>
+            <p class="field-error" id="consent-error" role="alert"></p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-6 w-full sm:w-auto">Gửi tin nhắn</button>
+        <p id="form-status" class="mt-3 text-sm" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-line dark:border-line-invert">
+  <div class="section grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="./index.html" class="flex items-center gap-2 font-display text-lg font-extrabold">
+        <span class="grid h-9 w-9 place-items-center rounded-lg bg-brand-600 text-white">TH</span>
+        <span>Th4nhH1</span>
+      </a>
+      <p class="mt-3 text-sm text-muted dark:text-muted-invert">Nguyễn Gia Huy — sinh viên CNTT, xây web bằng HTML, CSS, JavaScript.</p>
+    </div>
+    <nav aria-labelledby="footer-nav-title">
+      <h3 id="footer-nav-title" class="font-display text-sm font-bold uppercase tracking-wide">Điều hướng</h3>
+      <ul class="mt-4 space-y-2 text-sm text-muted dark:text-muted-invert">
+        <li><a class="hover:text-brand-600 dark:hover:text-accent-500" href="./index.html">Trang chủ</a></li>
+        <li><a class="hover:text-brand-600 dark:hover:text-accent-500" href="./projects.html">Dự án</a></li>
+        <li><a class="hover:text-brand-600 dark:hover:text-accent-500" href="./contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="footer-connect-title">
+      <h3 id="footer-connect-title" class="font-display text-sm font-bold uppercase tracking-wide">Kết nối</h3>
+      <ul class="mt-4 space-y-2 text-sm text-muted dark:text-muted-invert">
+        <li><a class="hover:text-brand-600 dark:hover:text-accent-500" href="mailto:email@vi-du.com">email@vi-du.com</a></li>
+        <li><a class="hover:text-brand-600 dark:hover:text-accent-500" href="https://github.com/">github.com/th4nhh1</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h3 class="font-display text-sm font-bold uppercase tracking-wide">Lên đầu trang</h3>
+      <button id="to-top" type="button" class="btn btn-ghost mt-4">↑ Về đầu trang</button>
+    </div>
+  </div>
+  <div class="border-t border-line py-6 text-center text-xs text-muted dark:border-line-invert dark:text-muted-invert">
+    © <span id="year"></span> Nguyễn Gia Huy. Đồ án cá nhân — Thực hành Thiết kế Web.
+  </div>
+</footer>
+
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

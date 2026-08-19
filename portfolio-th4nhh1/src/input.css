@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Bảng token — đọc từ định hướng thiết kế "creator đỏ rực, nền gần-đen ấm".
+  Màu thương hiệu lấy cảm hứng từ logo MrBeast: đỏ làm chủ đạo, đen làm nền,
+  vàng chỉ dùng làm điểm nhấn (KHÔNG lạm dụng — xem quy tắc buổi 3: nền tối
+  không phải màu đen tuyệt đối, chữ sáng không phải trắng tuyệt đối).
+*/
+@theme {
+  /* Thương hiệu */
+  --color-brand-50: #fce4e7;
+  --color-brand-500: #ff1f3d;
+  --color-brand-600: #e4002b;
+  --color-brand-700: #b4001f;
+
+  /* Điểm nhấn — chỉ dùng cho badge/underline/hover nhỏ, không dùng làm nền lớn */
+  --color-accent-500: #ffc700;
+  --color-accent-600: #e6b400;
+
+  /* Cặp màu sáng / tối — xem nguyên tắc buổi 3, mục Nhiệm vụ 3 */
+  --color-ink: #1a1210;
+  --color-ink-invert: #f5ede9;
+  --color-muted: #6b5d59;
+  --color-muted-invert: #b9ada8;
+  --color-surface: #fffbf9;
+  --color-surface-dark: #120a0a;
+  --color-surface-alt: #ffffff;
+  --color-surface-alt-dark: #1c1010;
+  --color-line: #ead9d6;
+  --color-line-invert: #33201f;
+
+  /* Chữ */
+  --font-display: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Bo góc — chunky, hợp với brand đậm chất */
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-ink font-body dark:bg-surface-dark dark:text-ink-invert;
+  }
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600 dark:outline-accent-500;
+  }
+}
+
+@layer components {
+  /* Container dùng chung cho mọi section — buổi 2, Nhiệm vụ 1 */
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 py-20 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-brand-600 dark:text-accent-500;
+  }
+
+  /* Badge tên/handle — yếu tố dấu ấn riêng của trang này */
+  .handle-tag {
+    @apply inline-flex items-center gap-1.5 rounded-pill border border-brand-600/40 bg-brand-600/10 px-3 py-1 font-mono text-sm text-brand-600 dark:border-accent-500/40 dark:bg-accent-500/10 dark:text-accent-500;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-2.5 text-sm font-semibold transition-colors;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply border border-line bg-transparent text-ink hover:border-brand-600 hover:text-brand-600 dark:border-line-invert dark:text-ink-invert dark:hover:border-accent-500 dark:hover:text-accent-500;
+  }
+  .btn-outline {
+    @apply border border-brand-600 text-brand-600 hover:bg-brand-600 hover:text-white dark:border-accent-500 dark:text-accent-500 dark:hover:bg-accent-500 dark:hover:text-surface-dark;
+  }
+  .btn[disabled] {
+    @apply pointer-events-none opacity-50;
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-surface-alt p-6 dark:border-line-invert dark:bg-surface-alt-dark;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-pill bg-brand-600 px-3 py-1 text-xs font-semibold text-white;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-pill border border-line px-3 py-1 font-mono text-xs text-muted dark:border-line-invert dark:text-muted-invert;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-ink/80 transition-colors hover:text-brand-600 dark:text-ink-invert/80 dark:hover:text-accent-500;
+  }
+  .nav-link[aria-current="page"] {
+    @apply text-brand-600 dark:text-accent-500;
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink dark:text-ink-invert;
+  }
+  .field-input {
+    @apply w-full rounded-lg border border-line bg-surface-alt px-3.5 py-2.5 text-sm text-ink placeholder:text-muted focus:border-brand-600 dark:border-line-invert dark:bg-surface-alt-dark dark:text-ink-invert dark:focus:border-accent-500;
+  }
+  .field-error {
+    @apply mt-1.5 min-h-4 text-xs font-medium text-brand-600 empty:hidden dark:text-accent-500;
+  }
+
+  /* Reveal khi cuộn — buổi 4, Nhiệm vụ 4 */
+  .reveal {
+    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+  }
+  .reveal.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+}

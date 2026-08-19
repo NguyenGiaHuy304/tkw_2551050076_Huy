@@ -1,6 +1,6 @@
 // js/faq.js — accordion, mỗi lúc chỉ mở một mục, dùng event delegation
 
-export function initFaq() {
+function initFaq() {
   const root = document.getElementById("faq");
   if (!root) return;
 
@@ -22,3 +22,5 @@ export function initFaq() {
     if (willOpen) setOpen(trigger, true);
   });
 }
+
+initFaq();

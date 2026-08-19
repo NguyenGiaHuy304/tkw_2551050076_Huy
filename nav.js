@@ -1,6 +1,6 @@
 // js/nav.js — menu mobile, navbar khi cuộn, nút lên đầu trang
 
-export function initNav() {
+function initNav() {
   const toggle = document.getElementById("nav-toggle");
   const menu = document.getElementById("mobile-menu");
   if (!toggle || !menu) return;
@@ -41,7 +41,7 @@ export function initNav() {
   });
 }
 
-export function initHeaderOnScroll() {
+function initHeaderOnScroll() {
   const header = document.getElementById("site-header");
   const sentinel = document.getElementById("nav-sentinel");
   if (!header || !sentinel) return;
@@ -55,7 +55,7 @@ export function initHeaderOnScroll() {
   observer.observe(sentinel);
 }
 
-export function initToTop() {
+function initToTop() {
   const btn = document.getElementById("to-top");
   if (!btn) return;
 
@@ -63,3 +63,7 @@ export function initToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+initNav();
+initHeaderOnScroll();
+initToTop();

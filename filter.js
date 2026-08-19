@@ -1,6 +1,6 @@
 // js/filter.js — lọc thẻ dự án theo nhóm, không dùng thư viện ngoài
 
-export function initFilter() {
+function initFilter() {
   const root = document.getElementById("project-filters");
   const grid = document.getElementById("project-grid");
   if (!root || !grid) return;
@@ -26,3 +26,5 @@ export function initFilter() {
     if (empty) empty.classList.toggle("hidden", visibleCount !== 0);
   });
 }
+
+initFilter();

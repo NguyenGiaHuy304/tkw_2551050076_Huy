@@ -1,6 +1,6 @@
 // js/reveal.js — hiệu ứng lộ dần khi cuộn + bộ đếm số liệu
 
-export function initReveal() {
+function initReveal() {
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
 
@@ -25,7 +25,7 @@ export function initReveal() {
   items.forEach((el) => observer.observe(el));
 }
 
-export function initCounters() {
+function initCounters() {
   const counters = document.querySelectorAll(".js-counter");
   if (!counters.length) return;
 
@@ -64,3 +64,6 @@ export function initCounters() {
 
   counters.forEach((el) => observer.observe(el));
 }
+
+initReveal();
+initCounters();

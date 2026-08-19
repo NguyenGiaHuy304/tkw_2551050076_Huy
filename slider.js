@@ -1,6 +1,6 @@
 // js/slider.js — carousel dự án nổi bật, tự viết, có inert + tự chạy có thể dừng
 
-export function initSlider() {
+function initSlider() {
   const root = document.getElementById("project-slider");
   const track = document.getElementById("project-track");
   if (!root || !track) return;
@@ -62,3 +62,5 @@ export function initSlider() {
   go(0);
   start();
 }
+
+initSlider();

@@ -3,7 +3,7 @@
 // thành công. Muốn gửi thật, nối endpoint (Formspree, EmailJS, API riêng...)
 // vào phần TODO bên dưới.
 
-export function initContactForm() {
+function initContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
 
@@ -56,3 +56,5 @@ export function initContactForm() {
     if (rules[name]) showError(name, "");
   });
 }
+
+initContactForm();

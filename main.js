@@ -1,23 +1,8 @@
-// js/main.js — điểm khởi động duy nhất cho index.html, projects.html, contact.html
-
-import { initNav, initHeaderOnScroll, initToTop } from "./nav.js";
-import { initTheme } from "./theme.js";
-import { initFaq } from "./faq.js";
-import { initReveal, initCounters } from "./reveal.js";
-import { initSlider } from "./slider.js";
-import { initFilter } from "./filter.js";
-import { initContactForm } from "./contact-form.js";
-
-initNav();
-initHeaderOnScroll();
-initToTop();
-initTheme();
-initFaq();
-initReveal();
-initCounters();
-initSlider();
-initFilter();
-initContactForm();
+// js/main.js — chạy sau cùng, chỉ làm việc còn lại (năm ở footer).
+// Các module khác (nav.js, theme.js, faq.js, reveal.js, slider.js,
+// filter.js, contact-form.js) tự gọi hàm khởi tạo của mình ở cuối file,
+// và đều tự kiểm tra "phần tử của mình có tồn tại trên trang này không"
+// trước khi làm gì — nên nạp chung một bộ script cho cả 3 trang vẫn an toàn.
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());

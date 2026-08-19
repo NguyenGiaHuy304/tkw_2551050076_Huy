@@ -1,6 +1,6 @@
 // js/theme.js — công tắc sáng/tối, đồng bộ với script inline trong <head>
 
-export function initTheme() {
+function initTheme() {
   const btn = document.getElementById("theme-toggle");
   if (!btn) return;
 
@@ -21,3 +21,5 @@ export function initTheme() {
 
   sync();
 }
+
+initTheme();

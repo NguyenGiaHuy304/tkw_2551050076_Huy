@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270">
+  <rect width="480" height="270" fill="#120A0A" />
+  <rect width="480" height="270" fill="#E4002B" opacity="0.12" />
+  <circle cx="240" cy="120" r="35" fill="#FFC700"/><path d="M170 220c14-45 55-60 70-60s56 15 70 60z" fill="#FFC700"/>
+  <text x="240" y="245" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#F5EDE9" text-anchor="middle">Portfolio cá nhân</text>
+</svg>

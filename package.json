@@ -1,0 +1,22 @@
+{
+  "name": "web-portfolio-project",
+  "version": "1.0.0",
+  "description": "Portfolio Website for HuyDev",
+  "main": "vite.config.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PH31M/web-portfolio-project.git"
+  },
+  "keywords": ["portfolio", "vite", "javascript", "css"],
+  "author": "HuyDev",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.2.1"
+  }
+}

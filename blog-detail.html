@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tối Ưu Hóa Giao Diện Đa Trang Với Vite MPA - Blog</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">&lt;C/&gt; HuyDev</a>
+    <button id="menu-toggle" class="btn-menu-toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="./about.html" class="nav-link">Giới thiệu</a>
+      <a href="./skills.html" class="nav-link">Kỹ năng</a>
+      <a href="./projects.html" class="nav-link">Dự án</a>
+      <a href="./blog.html" class="nav-link nav-link-active">Bài viết</a>
+      <a href="./contact.html" class="nav-link">Liên hệ</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme">☀️ Light</button>
+  </header>
+
+  <main class="container">
+    <section class="section reveal" style="max-width: 800px; margin: 0 auto;">
+      <a href="./blog.html" class="link-arrow">&larr; Quay lại danh sách bài viết</a>
+      <h1 class="margin-top-2">Tối Ưu Hóa Giao Diện Đa Trang Với Vite MPA</h1>
+      <div class="text-muted-xs margin-top-1">Tác giả: HuyDev | Ngày đăng: 15/04/2026</div>
+
+      <div class="margin-top-3" style="line-height: 1.8; color: var(--text-main);">
+        <p>Vite là một trong những công cụ đóng gói (build tool) hiện đại hàng đầu dành cho lập trình viên Web. Không chỉ phục vụ cho các ứng dụng Single Page (SPA) như React hay Vue, Vite còn hỗ trợ cấu hình Multi-Page Application (MPA) vô cùng đơn giản và mạnh mẽ.</p>
+        
+        <h3 class="margin-top-2">Cấu Hình Multi-Page Đơn Giản Trong vite.config.js</h3>
+        <p class="margin-top-1 text-muted-sm">Bằng cách khai báo thuộc tính <code>build.rollupOptions.input</code>, bạn có thể dễ dàng liên kết tất cả các trang HTML trong dự án vào quy trình build tự động của Vite.</p>
+
+        <p class="margin-top-2 text-muted-sm">Hy vọng kiến thức này sẽ giúp ích cho bạn trong việc tổ chức và quản lý dự án Web hoàn chỉnh!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+</html>

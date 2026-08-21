@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết dự án - HuyDev Portfolio</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">&lt;C/&gt; HuyDev</a>
+    <button id="menu-toggle" class="btn-menu-toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="./about.html" class="nav-link">Giới thiệu</a>
+      <a href="./skills.html" class="nav-link">Kỹ năng</a>
+      <a href="./projects.html" class="nav-link nav-link-active">Dự án</a>
+      <a href="./blog.html" class="nav-link">Bài viết</a>
+      <a href="./contact.html" class="nav-link">Liên hệ</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme">☀️ Light</button>
+  </header>
+
+  <main class="container">
+    <section class="section reveal">
+      <a href="./projects.html" class="link-arrow">&larr; Quay lại danh sách dự án</a>
+      <h1 class="margin-top-2">Trang Portfolio Cá Nhân (Vite MPA)</h1>
+      <span class="text-muted-sm">Ngày hoàn thành: Tháng 4, 2026</span>
+
+      <div class="margin-top-2">
+        <img src="https://via.placeholder.com/900x450" alt="Project Detail Banner" style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color);">
+      </div>
+
+      <div class="margin-top-3">
+        <h2>Mô Tả Dự Án</h2>
+        <p class="text-muted-sm margin-top-1">
+          Dự án portfolio cá nhân nhằm giới thiệu các sản phẩm, bộ kỹ năng và blog công nghệ. Trang được kiến trúc theo dạng Multi-Page Application (MPA) tối ưu hóa công cụ tìm kiếm (SEO) và tải trang mượt mà nhờ Vite Build Tool.
+        </p>
+
+        <h3 class="margin-top-2">Tính Năng Chính</h3>
+        <ul style="margin-left: 1.5rem; color: var(--text-muted);" class="margin-top-1">
+          <li>Chuyển đổi giao diện Dark/Light mode dựa trên CSS Variables và LocalStorage.</li>
+          <li>Thực hiện Responsive trên mọi thiết bị (Desktop, Tablet, Mobile) với Hamburger Menu.</li>
+          <li>Sử dụng Progressive Enhancement cho hiệu ứng Scroll Reveal mượt mà.</li>
+        </ul>
+
+        <div class="hero-actions margin-top-3">
+          <a href="#" target="_blank" class="btn btn-primary">Demo Thực Tế</a>
+          <a href="https://github.com/PH31M/web-portfolio-project" target="_blank" class="btn btn-outline">Mã Nguồn Github</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ - HuyDev Portfolio</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">&lt;C/&gt; HuyDev</a>
+    <button id="menu-toggle" class="btn-menu-toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="./about.html" class="nav-link">Giới thiệu</a>
+      <a href="./skills.html" class="nav-link">Kỹ năng</a>
+      <a href="./projects.html" class="nav-link">Dự án</a>
+      <a href="./blog.html" class="nav-link">Bài viết</a>
+      <a href="./contact.html" class="nav-link nav-link-active">Liên hệ</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme">☀️ Light</button>
+  </header>
+
+  <main class="container">
+    <section class="section reveal" style="max-width: 600px; margin: 0 auto;">
+      <span class="badge-pill">Contact Me</span>
+      <h1 class="margin-top-1 text-center">Gửi Lời Nhắn Đến Tôi</h1>
+      <p class="description text-center margin-top-1">Rất vui được kết nối và trao đổi thông tin cùng bạn.</p>
+
+      <form class="margin-top-3" style="display: flex; flex-direction: column; gap: 1.25rem;" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi tin nhắn!');">
+        <div>
+          <label style="display: block; font-family: var(--font-mono); margin-bottom: 0.5rem; font-size: 0.9rem;">Họ và Tên</label>
+          <input type="text" required placeholder="Nhập tên của bạn..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-card); color: var(--text-main); font-family: inherit;">
+        </div>
+
+        <div>
+          <label style="display: block; font-family: var(--font-mono); margin-bottom: 0.5rem; font-size: 0.9rem;">Email</label>
+          <input type="email" required placeholder="nhapemail@example.com" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-card); color: var(--text-main); font-family: inherit;">
+        </div>
+
+        <div>
+          <label style="display: block; font-family: var(--font-mono); margin-bottom: 0.5rem; font-size: 0.9rem;">Nội dung tin nhắn</label>
+          <textarea rows="5" required placeholder="Nội dung cần trao đổi..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--bg-card); color: var(--text-main); font-family: inherit; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary margin-top-1">Gửi Tin Nhắn</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+</html>

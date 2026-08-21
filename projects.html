@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự án - HuyDev Portfolio</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">&lt;C/&gt; HuyDev</a>
+    <button id="menu-toggle" class="btn-menu-toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="./about.html" class="nav-link">Giới thiệu</a>
+      <a href="./skills.html" class="nav-link">Kỹ năng</a>
+      <a href="./projects.html" class="nav-link nav-link-active">Dự án</a>
+      <a href="./blog.html" class="nav-link">Bài viết</a>
+      <a href="./contact.html" class="nav-link">Liên hệ</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme">☀️ Light</button>
+  </header>
+
+  <main class="container">
+    <section class="section reveal">
+      <span class="badge-pill">Portfolio</span>
+      <h1 class="margin-top-1">Các Dự Án Đã Thực Hiện</h1>
+      <p class="description margin-top-1">Danh sách các sản phẩm và dự án thực tế đã hoàn thành.</p>
+
+      <div class="margin-top-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <!-- Project 1 -->
+        <div class="tech-card" style="text-align: left; padding: 1.5rem;">
+          <img src="https://via.placeholder.com/400x200" alt="Project 1 Image" style="border-radius: 8px; margin-bottom: 1rem;">
+          <span class="badge-pill" style="font-size: 0.75rem;">Web Application</span>
+          <h3 class="margin-top-1">Trang Portfolio Cá Nhân (MPA)</h3>
+          <p class="text-muted-sm margin-top-1">Ứng dụng web đa trang sử dụng Vite, JavaScript ES6 và CSS Variables linh hoạt hỗ trợ Dark/Light Theme.</p>
+          <div class="margin-top-2">
+            <a href="./project-detail.html" class="btn btn-primary full-width">Xem chi tiết</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="tech-card" style="text-align: left; padding: 1.5rem;">
+          <img src="https://via.placeholder.com/400x200" alt="Project 2 Image" style="border-radius: 8px; margin-bottom: 1rem;">
+          <span class="badge-pill" style="font-size: 0.75rem;">Interactive Tool</span>
+          <h3 class="margin-top-1">Thuật Toán & Mô Phỏng C++</h3>
+          <p class="text-muted-sm margin-top-1">Bộ chương trình xử lý ma trận và thuật toán tìm kiếm tối ưu cho lập trình ứng dụng.</p>
+          <div class="margin-top-2">
+            <a href="./project-detail.html" class="btn btn-outline full-width">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+</html>

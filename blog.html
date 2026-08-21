@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài viết - HuyDev Portfolio</title>
+  <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="logo">&lt;C/&gt; HuyDev</a>
+    <button id="menu-toggle" class="btn-menu-toggle" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a href="../index.html" class="nav-link">Trang chủ</a>
+      <a href="./about.html" class="nav-link">Giới thiệu</a>
+      <a href="./skills.html" class="nav-link">Kỹ năng</a>
+      <a href="./projects.html" class="nav-link">Dự án</a>
+      <a href="./blog.html" class="nav-link nav-link-active">Bài viết</a>
+      <a href="./contact.html" class="nav-link">Liên hệ</a>
+    </nav>
+    <button id="theme-toggle" class="btn-theme">☀️ Light</button>
+  </header>
+
+  <main class="container">
+    <section class="section reveal">
+      <span class="badge-pill">Blog & Insights</span>
+      <h1 class="margin-top-1">Chia Sẻ Kiến Thức Lập Trình</h1>
+      <p class="description margin-top-1">Ghi chép kinh nghiệm, hướng dẫn lập trình web và tối ưu hóa mã nguồn.</p>
+
+      <div class="margin-top-3" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <!-- Blog Item 1 -->
+        <article class="cta-box" style="padding: 2rem; text-align: left;">
+          <span class="text-muted-xs">📅 15 Tháng 4, 2026 • Frontend</span>
+          <h2 class="margin-top-1"><a href="./blog-detail.html">Tối Ưu Hóa Giao Diện Đa Trang Với Vite MPA</a></h2>
+          <p class="text-muted-sm margin-top-1">Khám phá cách cấu hình Vite để quản lý dự án Web Multi-Page một cách nhanh chóng và tối ưu quy trình Build.</p>
+          <a href="./blog-detail.html" class="link-arrow margin-top-2">Đọc tiếp &rarr;</a>
+        </article>
+
+        <!-- Blog Item 2 -->
+        <article class="cta-box" style="padding: 2rem; text-align: left;">
+          <span class="text-muted-xs">📅 02 Tháng 3, 2026 • JavaScript</span>
+          <h2 class="margin-top-1"><a href="./blog-detail.html">Xử Lý Dark Mode Với CSS Variables & LocalStorage</a></h2>
+          <p class="text-muted-sm margin-top-1">Hướng dẫn chi tiết tạo chế độ sáng/tối tự động lưu lại trạng thái lựa chọn của người dùng qua trình duyệt.</p>
+          <a href="./blog-detail.html" class="link-arrow margin-top-2">Đọc tiếp &rarr;</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer text-center">
+    <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
+  </footer>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+</html>

@@ -408,3 +408,25 @@ img {
 
   .site-nav.active { display: flex; }
 }
+/* ==========================================================================
+   LIÊN HỆ (CONTACT PAGE)
+   ========================================================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--brand-accent) !important;
+  box-shadow: 0 0 0 3px rgba(0, 229, 163, 0.15);
+}

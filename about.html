@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới thiệu - HuyDev Portfolio</title>
+  <title>Giới thiệu - HuyDev</title>
   <link rel="stylesheet" href="../src/css/style.css">
+  <style>
+    /* Bổ sung CSS nhỏ cho phần Timeline Kinh nghiệm */
+    .timeline { border-left: 2px solid var(--brand-accent); padding-left: 1.5rem; margin-top: 1.5rem; }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -1.85rem; top: 0; width: 12px; height: 12px;
+      background: var(--brand-accent); border-radius: 50%; box-shadow: 0 0 10px var(--brand-accent);
+    }
+    .timeline-date { font-size: 0.85rem; color: var(--brand-accent); font-family: var(--font-mono); margin-bottom: 0.5rem; display: block;}
+  </style>
 </head>
 <body>
 
@@ -24,36 +34,65 @@
     <button id="theme-toggle" class="btn-theme">☀️ Light</button>
   </header>
 
-  <main class="container">
-    <section class="section reveal">
-      <span class="badge-pill">About Me</span>
-      <h1 class="margin-top-1">Về Tôi & Hành Trình Lập Trình</h1>
-      <p class="description margin-top-1">
-        Tôi là một Frontend Developer đam mê tạo ra các giao diện người dùng mượt mà, trực quan và tối ưu hiệu năng. Vốn kiến thức của tôi tập trung vào HTML5, CSS3, JavaScript và React.js, cùng với sự chủ động cập nhật các công nghệ lập trình hiện đại.
-      </p>
+  <main class="container section">
+    <div class="text-center reveal">
+      <span class="badge-pill">Về bản thân</span>
+      <h1 class="margin-top-1">Hành trình phát triển</h1>
+    </div>
 
-      <div class="margin-top-3">
-        <h2>Kinh Nghiệm & Học Tập</h2>
-        <div class="margin-top-2" style="border-left: 2px solid var(--brand-accent); padding-left: 1.5rem;">
-          <div style="margin-bottom: 1.5rem;">
-            <h3>Sinh viên Công nghệ Thông tin</h3>
-            <span class="text-muted-xs">Trường Đại học Mở TP.HCM</span>
-            <p class="margin-top-1 text-muted-sm">Tập trung nghiên cứu Cấu trúc dữ liệu & Giải thuật, Kiến trúc máy tính, Hệ điều hành và Phát triển phần mềm Web.</p>
+    <!-- Khối Intro như trong ảnh của bạn -->
+    <div class="about-content margin-top-3 reveal" style="background: var(--bg-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+      <div class="about-text-box" style="flex: 1; min-width: 300px;">
+        <h3 style="color: var(--brand-accent);">Đam mê lập trình & Xây dựng sản phẩm</h3>
+        <p class="margin-top-1">Xin chào! Mình là Huy, lập trình viên Full-Stack với thế mạnh về HTML, CSS, JavaScript, React và xây dựng kiến trúc ứng dụng web hiện đại.</p>
+        <p>Mục tiêu lớn nhất của mình là tạo ra những giao diện web nhanh, mượt và thân thiện nhất với người dùng, đồng thời đảm bảo hệ thống backend hoạt động ổn định và bảo mật.</p>
+      </div>
+      <div class="about-image" style="flex: 1; min-width: 300px;">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="Huy Nguyễn Avatar" style="border-radius: 12px; width: 100%;">
+      </div>
+    </div>
+
+    <!-- Khối bổ sung: Kinh nghiệm & Dịch vụ -->
+    <div class="margin-top-3 reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+      
+      <div>
+        <h3>🚀 Kinh nghiệm làm việc</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2024 - Hiện tại</span>
+            <h4>Freelance Full-Stack Developer</h4>
+            <p class="text-muted-sm">Phát triển các hệ thống quản lý nội bộ (CMS) và Website thương mại điện tử cho khách hàng vừa và nhỏ. Sử dụng React.js, Node.js và MongoDB.</p>
           </div>
-          <div>
-            <h3>Frontend Developer / Freelance</h3>
-            <span class="text-muted-xs">2024 - Hiện tại</span>
-            <p class="margin-top-1 text-muted-sm">Xây dựng các giao diện web phản hồi (responsive UI), tối ưu hóa trải nghiệm người dùng và tích hợp API RESTful cho các ứng dụng web thực tế.</p>
+          <div class="timeline-item">
+            <span class="timeline-date">2023 - 2024</span>
+            <h4>Frontend Developer - ABC Tech</h4>
+            <p class="text-muted-sm">Tham gia tối ưu hóa UI/UX, chuyển đổi thiết kế Figma thành code HTML/CSS/JS thuần và tích hợp API cho các dự án Web App.</p>
           </div>
         </div>
       </div>
-    </section>
+
+      <div>
+        <h3>💡 Triết lý làm việc</h3>
+        <ul style="list-style: none; padding: 0; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+          <li style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+            <strong>Code sạch (Clean Code):</strong> Luôn ưu tiên viết code dễ đọc, dễ bảo trì và có tính tái sử dụng cao.
+          </li>
+          <li style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+            <strong>Lấy người dùng làm trung tâm:</strong> Trải nghiệm (UX) mượt mà là yếu tố quyết định sự thành bại của sản phẩm.
+          </li>
+          <li style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px;">
+            <strong>Học hỏi không ngừng:</strong> Công nghệ thay đổi mỗi ngày, mình luôn dành 20% thời gian để cập nhật các framework mới.
+          </li>
+        </ul>
+      </div>
+
+    </div>
   </main>
 
-  <footer class="site-footer text-center">
+  <footer class="site-footer text-center margin-top-3">
     <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="../src/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 </html>

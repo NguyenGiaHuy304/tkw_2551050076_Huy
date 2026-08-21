@@ -3,8 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kỹ năng - HuyDev Portfolio</title>
+  <title>Kỹ năng - HuyDev</title>
   <link rel="stylesheet" href="../src/css/style.css">
+  <style>
+    /* CSS tinh chỉnh riêng cho Popup & Tính năng mới */
+    .modal-content { max-width: 550px; text-align: left; }
+    .skill-level-badge {
+      background: rgba(0, 229, 163, 0.1); border: 1px solid var(--brand-accent);
+      color: var(--brand-accent); padding: 0.5rem 1.2rem; font-size: 0.9rem;
+      border-radius: 30px; display: inline-block; font-weight: 600;
+    }
+    .achievement-list { list-style: none; padding-left: 0; margin-top: 1rem; }
+    .achievement-list li {
+      position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--text-main);
+    }
+    .achievement-list li::before {
+      content: '✅'; position: absolute; left: 0; top: 0px; font-size: 0.9rem;
+    }
+    .skill-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .tag { background: var(--bg-body); color: var(--text-muted); font-size: 0.8rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-family: var(--font-mono);}
+    
+    /* Nút Copy Easter Egg */
+    .btn-copy {
+      background: transparent; border: 1px dashed var(--text-muted); color: var(--text-muted);
+      padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;
+      font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; width: 100%; justify-content: center;
+    }
+    .btn-copy:hover { border-color: var(--brand-accent); color: var(--brand-accent); }
+    .btn-copy.copied { background: var(--brand-accent); color: #000; border-style: solid; }
+  </style>
 </head>
 <body>
 
@@ -24,53 +51,258 @@
     <button id="theme-toggle" class="btn-theme">☀️ Light</button>
   </header>
 
-  <main class="container">
-    <section class="section reveal">
-      <span class="badge-pill">Skills & Expertise</span>
-      <h1 class="margin-top-1">Kỹ Năng & Công Nghệ</h1>
-      <p class="description margin-top-1">Tổng quan về các công nghệ, ngôn ngữ và công cụ lập trình tôi sử dụng thường xuyên trong công việc.</p>
+  <main class="container section text-center reveal">
+    <span class="badge-pill">Skills & Tech Stack</span>
+    <h1 class="margin-top-1">Công nghệ & Trình độ</h1>
 
-      <div class="tech-badges-grid margin-top-3">
-        <div class="tech-card">
-          <div class="tech-icon color-html">HTML5</div>
-          <div class="tech-name">Semantic HTML</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon color-css">CSS3</div>
-          <div class="tech-name">Flexbox / Grid / SCSS</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon color-js">JS</div>
-          <div class="tech-name">JavaScript ES6+</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon color-react">REACT</div>
-          <div class="tech-name">React / Redux Toolkit</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon" style="color: #61dafb;">C++</div>
-          <div class="tech-name">Data Structures & Algo</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon" style="color: #3776ab;">PYTHON</div>
-          <div class="tech-name">Scripting / Logic</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon" style="color: #f05032;">GIT</div>
-          <div class="tech-name">Version Control</div>
-        </div>
-        <div class="tech-card">
-          <div class="tech-icon" style="color: #646cff;">VITE</div>
-          <div class="tech-name">Build Tooling</div>
-        </div>
+    <div class="skills-controls margin-top-3">
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-category="all">Tất cả</button>
+        <button class="filter-btn" data-category="frontend">Frontend</button>
+        <button class="filter-btn" data-category="backend">Backend</button>
+        <button class="filter-btn" data-category="tools">Tools & Database</button>
       </div>
-    </section>
+      <div class="search-box">
+        <input type="text" id="skill-search" placeholder="🔍 Tìm kỹ năng...">
+      </div>
+    </div>
+
+    <!-- Chỉ cần gắn data-skill ID, logic JS sẽ lo phần còn lại -->
+    <div class="tech-badges-grid margin-top-3" id="skills-grid">
+      <div class="tech-card" data-category="frontend" data-skill="html">
+        <div class="tech-icon color-html">HTML</div>
+        <div class="tech-name margin-top-1">HTML5</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="90%"></div></div>
+      </div>
+      <div class="tech-card" data-category="frontend" data-skill="css">
+        <div class="tech-icon color-css">CSS</div>
+        <div class="tech-name margin-top-1">CSS3 / SCSS</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="85%"></div></div>
+      </div>
+      <div class="tech-card" data-category="frontend" data-skill="js">
+        <div class="tech-icon color-js">JS</div>
+        <div class="tech-name margin-top-1">JavaScript</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="80%"></div></div>
+      </div>
+      <div class="tech-card" data-category="frontend" data-skill="react">
+        <div class="tech-icon color-react">REACT</div>
+        <div class="tech-name margin-top-1">React.js</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="75%"></div></div>
+      </div>
+      <div class="tech-card" data-category="backend" data-skill="node">
+        <div class="tech-icon" style="color: #68a063;">NODE</div>
+        <div class="tech-name margin-top-1">Node.js</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="65%"></div></div>
+      </div>
+      <div class="tech-card" data-category="tools" data-skill="git">
+        <div class="tech-icon" style="color: #f05032;">GIT</div>
+        <div class="tech-name margin-top-1">Git/GitHub</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="80%"></div></div>
+      </div>
+      <div class="tech-card" data-category="tools" data-skill="mongo">
+        <div class="tech-icon" style="color: #4DB33D;">MONGO</div>
+        <div class="tech-name margin-top-1">MongoDB</div>
+        <div class="skill-progress-bg margin-top-1"><div class="skill-progress-fill" data-progress="70%"></div></div>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer text-center">
+  <!-- Modal Popup Dynamic -->
+  <div class="skill-modal" id="skill-modal">
+    <div class="modal-content">
+      <span class="close-modal" id="close-modal">&times;</span>
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <h2 id="modal-title" style="color: var(--brand-accent); font-size: 2rem;">Tên Kỹ năng</h2>
+          <p id="modal-experience" style="color: var(--text-muted); margin-top: 0.3rem;">Thâm niên: X năm</p>
+        </div>
+        <div id="modal-level" class="skill-level-badge">90%</div>
+      </div>
+
+      <p id="modal-desc" class="margin-top-1" style="line-height: 1.6; font-size: 1.05rem;"></p>
+      
+      <h4 class="margin-top-2" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Thực tiễn áp dụng:</h4>
+      <ul id="modal-achievements" class="achievement-list">
+        <!-- Render bằng JS -->
+      </ul>
+
+      <div id="modal-tags" class="skill-tags">
+        <!-- Render bằng JS -->
+      </div>
+
+      <!-- Chức năng Copy vui vẻ -->
+      <button id="btn-copy-skill" class="btn-copy">
+        📋 Sao chép tóm tắt năng lực
+      </button>
+    </div>
+  </div>
+
+  <footer class="site-footer text-center margin-top-3">
     <p class="footer-copy">© 2026 Bản quyền thuộc về Huy. All rights reserved.</p>
   </footer>
 
-  <script type="module" src="../src/main.js"></script>
+  <script type="module" src="./main.js"></script>
+  <script>
+    // --- KHO DỮ LIỆU CHI TIẾT CÁC KỸ NĂNG ---
+    const skillDetails = {
+      html: {
+        name: "HTML5", exp: "3 năm", level: "90%",
+        desc: "Không chỉ dừng lại ở các thẻ cơ bản, mình tập trung vào cấu trúc Semantic chuẩn mực giúp bot Google dễ dàng đọc hiểu website.",
+        achievements: [
+          "Tối ưu hóa điểm số Lighthouse SEO và Accessibility đạt 100/100 cho 3 dự án Landing Page.",
+          "Áp dụng chuẩn WAI-ARIA giúp người dùng sử dụng trình đọc màn hình dễ dàng điều hướng web.",
+          "Quản lý phân cấp thẻ Heading (H1-H6) logic cho các trang Blog."
+        ],
+        tags: ["#SemanticWeb", "#SEO", "#Accessibility"]
+      },
+      css: {
+        name: "CSS3 / SCSS", exp: "3 năm", level: "85%",
+        desc: "Đam mê tạo ra các giao diện mượt mà. Mình viết CSS theo chuẩn kiến trúc BEM để code không bị chồng chéo khi làm việc nhóm.",
+        achievements: [
+          "Xây dựng thành công hệ thống Dark/Light theme động bằng CSS Variables.",
+          "Clone chính xác 95% giao diện phức tạp từ Figma bằng Grid và Flexbox.",
+          "Viết các hiệu ứng Animation mượt mà bằng Keyframes thuần không cần thư viện ngoài."
+        ],
+        tags: ["#BEM", "#Responsive", "#Animation", "#SASS"]
+      },
+      js: {
+        name: "JavaScript (ES6+)", exp: "2.5 năm", level: "80%",
+        desc: "Ngôn ngữ cốt lõi mình sử dụng hàng ngày. Hiểu sâu về cách JS hoạt động dưới nền tảng (Event Loop, Call Stack, Closures).",
+        achievements: [
+          "Xử lý hàng nghìn logic bất đồng bộ (Async/Await) khi gọi API từ Server mượt mà.",
+          "Xây dựng các chức năng thao tác trực tiếp với DOM như Drag & Drop (kéo thả) Kanban board.",
+          "Sử dụng LocalStorage/SessionStorage để lưu trạng thái giỏ hàng mà không cần DB."
+        ],
+        tags: ["#ES6", "#DOM_Manipulation", "#Async_Await"]
+      },
+      react: {
+        name: "React.js", exp: "1.5 năm", level: "75%",
+        desc: "Sử dụng React để xây dựng các Single Page Application (SPA) với tốc độ phản hồi cực nhanh.",
+        achievements: [
+          "Phát triển hoàn chỉnh Frontend cho 1 trang E-commerce với giỏ hàng và thanh toán.",
+          "Tối ưu hóa hiệu suất render bằng useMemo và useCallback, giảm 40% số lần re-render thừa.",
+          "Quản lý State phức tạp xuyên suốt ứng dụng bằng Redux Toolkit."
+        ],
+        tags: ["#SPA", "#Hooks", "#ReduxToolkit", "#ComponentBased"]
+      },
+      node: {
+        name: "Node.js / Express", exp: "1 năm", level: "65%",
+        desc: "Thiết lập máy chủ backend linh hoạt. Đảm nhiệm việc giao tiếp giữa Database và giao diện người dùng.",
+        achievements: [
+          "Thiết kế và xây dựng hệ thống RESTful API chuẩn mực cho ứng dụng quản lý nhân sự.",
+          "Triển khai xác thực người dùng an toàn bằng JWT (JSON Web Tokens) và mã hóa mật khẩu bcrypt.",
+          "Viết Middleware xử lý lỗi (Error Handling) và giới hạn request (Rate Limiting) chống spam."
+        ],
+        tags: ["#RESTful_API", "#JWT", "#Middleware", "#Backend"]
+      },
+      git: {
+        name: "Git / GitHub", exp: "2 năm", level: "80%",
+        desc: "Công cụ sống còn để quản lý mã nguồn và làm việc nhóm hiệu quả, không sợ mất code.",
+        achievements: [
+          "Xử lý gọn gàng các tình huống Merge Conflict phức tạp khi làm việc chung với team 5 người.",
+          "Áp dụng chuẩn Git Flow (tạo nhánh feature, dev, main) phân minh.",
+          "Tự động hóa quá trình deploy website lên Vercel/Netlify thông qua GitHub Webhooks."
+        ],
+        tags: ["#VersionControl", "#CI_CD", "#Teamwork"]
+      },
+      mongo: {
+        name: "MongoDB", exp: "1 năm", level: "70%",
+        desc: "Cơ sở dữ liệu NoSQL linh hoạt, phù hợp với hệ sinh thái JavaScript (MERN Stack).",
+        achievements: [
+          "Thiết kế cấu trúc Schema (Document) tối ưu cho ứng dụng Chat (lưu trữ tin nhắn mượt mà).",
+          "Thực hiện các truy vấn phức tạp (Aggregation Pipeline) để thống kê doanh thu theo tháng.",
+          "Sử dụng Mongoose ODM để kiểm soát chặt chẽ dữ liệu đầu vào."
+        ],
+        tags: ["#NoSQL", "#Mongoose", "#DatabaseDesign"]
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const skillCards = document.querySelectorAll('.tech-card');
+      const searchInput = document.getElementById('skill-search');
+      const modal = document.getElementById('skill-modal');
+      const closeModal = document.getElementById('close-modal');
+      const btnCopy = document.getElementById('btn-copy-skill');
+
+      let currentSkillName = "";
+      let currentSkillLevel = "";
+
+      // Chạy thanh tiến độ mượt mà
+      setTimeout(() => {
+        document.querySelectorAll('.skill-progress-fill').forEach(fill => {
+          fill.style.width = fill.getAttribute('data-progress');
+        });
+      }, 200);
+
+      // Bộ lọc
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const category = btn.getAttribute('data-category');
+          skillCards.forEach(card => {
+            card.style.display = (category === 'all' || card.getAttribute('data-category') === category) ? 'flex' : 'none';
+          });
+        });
+      });
+
+      // Tìm kiếm
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        skillCards.forEach(card => {
+          const name = card.querySelector('.tech-name').textContent.toLowerCase();
+          card.style.display = name.includes(query) ? 'flex' : 'none';
+        });
+      });
+
+      // Xử lý Render Dynamic Data vào Modal khi Click Card
+      skillCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const skillKey = card.getAttribute('data-skill');
+          const data = skillDetails[skillKey];
+          
+          if(data) {
+            document.getElementById('modal-title').textContent = data.name;
+            document.getElementById('modal-experience').textContent = `Thâm niên: ${data.exp}`;
+            document.getElementById('modal-level').textContent = data.level;
+            document.getElementById('modal-desc').textContent = data.desc;
+            
+            // Lưu trạng thái để copy
+            currentSkillName = data.name;
+            currentSkillLevel = data.level;
+            
+            // Render Thành tựu
+            const achList = document.getElementById('modal-achievements');
+            achList.innerHTML = data.achievements.map(ach => `<li>${ach}</li>`).join('');
+            
+            // Render Tags
+            const tagBox = document.getElementById('modal-tags');
+            tagBox.innerHTML = data.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+            // Reset nút copy
+            btnCopy.textContent = "📋 Sao chép tóm tắt năng lực";
+            btnCopy.classList.remove("copied");
+
+            modal.classList.add('active');
+          }
+        });
+      });
+
+      // Chức năng Copy (Clipboard API)
+      btnCopy.addEventListener('click', () => {
+        const textToCopy = `Ứng viên: HuyDev | Kỹ năng: ${currentSkillName} | Mức độ: ${currentSkillLevel}`;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          btnCopy.textContent = "✅ Đã sao chép vào Clipboard!";
+          btnCopy.classList.add("copied");
+        });
+      });
+
+      // Đóng Popup
+      closeModal.addEventListener('click', () => modal.classList.remove('active'));
+      window.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+    });
+  </script>
 </body>
 </html>
